@@ -9,6 +9,12 @@ class QuizzesController < ApplicationController
 
        3.times do
             question = @quiz.questions.build
+            #has to be in a block that looks like this to work
+            4.times do
+                #this also depends on a variable called 'answers' in the loop
+                #that is located in your view
+                 question.answers.build
+            end
         end
     end
 
