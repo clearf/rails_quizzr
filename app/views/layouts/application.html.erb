@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quizzr</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <%= nav_bar :brand => "Quizzr", :brand_link => root_path do %>
+        <% menu_group do %>
+            <%= menu_item "Home", root_path %>
+            <%= menu_item "New Quiz", new_quiz_path %>
+            <%= menu_item "View Quizzes", quizzes_path %>
+        <% end %>
+    <% end %>
+
+    <div id="main_container">
+        <%= yield %>
+    </div>
+</body>
+</html>

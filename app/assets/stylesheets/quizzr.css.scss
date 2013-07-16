@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+}
+
+#main_container {
+    margin: 10px auto 10px auto;
+    padding: 0px;
+    width: 960px;
+}
+
+.quiz_name {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.quizzes {
+    list-style-type: none;
+    margin: 10px;
+    li {
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.questions {
+    list-style-type: none;
+    margin: 10px;
+    li {
+        font-size: 15px;
+        font-weight: normal;
+    }
+}
