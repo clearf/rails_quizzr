@@ -1,1 +1,14 @@
-new quiz page
+<div class="quiz">
+<%= form_for @quiz do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <div class="questions">
+    <%= f.fields_for :questions do |question| %>
+        <%= question.label :content, "Question" %><br>
+        <%= question.text_area :content, :rows => 3 %>
+    <% end %>
+    </div>
+    <%= f.submit "Create Quiz" %>
+<% end %>
+</div>

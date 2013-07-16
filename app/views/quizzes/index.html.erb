@@ -1,1 +1,14 @@
-quizzes index page
+<% @quizzes.each do |quiz| %>
+
+    <div class="quiz">
+        <%= link_to quiz.name, quiz %>
+    </div>
+    <div class="questions">
+        <% quiz.questions.each do |question| %>
+            <div class="question">
+                <%= question.content %>
+            </div>
+        <% end %>
+    </div>
+
+<% end %>

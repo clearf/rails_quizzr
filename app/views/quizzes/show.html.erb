@@ -1,1 +1,8 @@
-show quiz page
+<h1><%= @quiz.name %></h1>
+<div class="questions">
+        <% @quiz.questions.each do |question| %>
+            <div class="question">
+                <%= question.content %>
+            </div>
+    <% end %>
+</div>
