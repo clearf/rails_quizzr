@@ -7,16 +7,21 @@
     <%= f.fields_for :questions do |question| %>
         <div class="question">
         <%= question.label :content, "Question" %><br>
-        <%= question.text_area :content, :rows => 3 %>
-        <%= question.label :_destroy, "Remove" %>
-        <%= question.check_box :_destroy %>
+        <%= question.text_area :content, :rows => 3 %><br>
+        <%= question.hidden_field :_destroy %>
+        <%= link_to_function "remove", "remove_field(this)" %>
 
         <div class="answers offset1">
             <%= question.fields_for :answers do |answer| %>
+            <div class="answer"
                 <%= answer.label :content, "Answer" %><br>
                 <%= answer.text_field :content %>
                 <%= answer.label :is_correct, "Right Answer" %>
                 <%= answer.check_box :is_correct %>
+                <br>
+                <%= answer.hidden_field :_destroy %>
+                <%= link_to_function "remove", "remove_field(this)" %>
+            </div>
             <% end %>
         </div>
         </div>
