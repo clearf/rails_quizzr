@@ -8,6 +8,6 @@ class Quiz < ActiveRecord::Base
   # has_many :answers, through: :questions
   
   # #nested attribute
-  accepts_nested_attributes_for :questions
+  accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
 end

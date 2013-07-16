@@ -30,3 +30,11 @@ body {
         font-weight: normal;
     }
 }
+
+.answer.correct {
+    font-weight: bold;
+    color: green;
+}
+.answer {
+    color: red;
+}

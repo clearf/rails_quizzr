@@ -3,10 +3,23 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
-    <div class="questions">
+    <div class="questions offset1">
     <%= f.fields_for :questions do |question| %>
+        <div class="question">
         <%= question.label :content, "Question" %><br>
         <%= question.text_area :content, :rows => 3 %>
+        <%= question.label :_destroy, "Remove" %>
+        <%= question.check_box :_destroy %>
+
+        <div class="answers offset1">
+            <%= question.fields_for :answers do |answer| %>
+                <%= answer.label :content, "Answer" %><br>
+                <%= answer.text_field :content %>
+                <%= answer.label :is_correct, "Right Answer" %>
+                <%= answer.check_box :is_correct %>
+            <% end %>
+        </div>
+        </div>
     <% end %>
     </div>
 
