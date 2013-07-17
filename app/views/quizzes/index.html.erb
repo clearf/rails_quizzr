@@ -1,13 +1,14 @@
+<div class="quizzes_container">
 <% @quizzes.each do |quiz| %>
-
     <div class="quiz">
-        <%= link_to quiz.name, quiz %>
-    </div>
+        <p><%= link_to quiz.name, quiz %></p>
+        <p class="quiz_options">
+            <%= link_to_function "add answers", "AnswerKey(this)" %>
+        </p>
     <div class="questions offset1">
         <% quiz.questions.each do |question| %>
             <div class="question">
                 <%= question.content %>
-
                 <div class="answers offset1">
                     <% question.answers.each do |answer| %>
                         <% if answer.is_correct %>
@@ -19,6 +20,9 @@
                 </div>
             </div>
         <% end %>
+        </div>
     </div>
-
 <% end %>
+</div>
+
+    

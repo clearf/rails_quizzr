@@ -31,10 +31,16 @@ body {
     }
 }
 
-.answer.correct {
-    font-weight: bold;
-    color: green;
+.answer_key {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    color: white;
 }
-.answer {
-    color: red;
-}
+// .answer.correct {
+//     font-weight: bold;
+//     color: green;
+// }
+// .answer {
+//     color: red;
+// }
