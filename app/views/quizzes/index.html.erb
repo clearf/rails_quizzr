@@ -1,6 +1,6 @@
 <div class="quizzes_container">
 <% @quizzes.each do |quiz| %>
-    <div class="quiz">
+    <div class="quiz offset1">
         <p><%= link_to quiz.name, quiz %></p>
         <p class="quiz_options">
             <%= link_to_function "add answers", "AnswerKey(this,"+quiz.id.to_s+")" %>
