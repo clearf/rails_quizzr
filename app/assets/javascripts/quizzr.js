@@ -10,6 +10,10 @@ function remove_field(link){
     field_container.hide(200);
 }
 
+function remove_answer_key(quiz_id) {
+    $('.answer_key.quiz_'+quiz_id).remove();
+}
+
 function AnswerKey(link_that_calls_function,quiz_id){
     var quiz_container_element = $(link_that_calls_function)
                                     .parents('.quiz');
@@ -23,7 +27,7 @@ function AnswerKey(link_that_calls_function,quiz_id){
                                     //in this case
                                     
     var answer_key_element = $('<div>');
-    answer_key_element.addClass('answer_key');
+    answer_key_element.addClass('answer_key quiz_'+quiz_id);
     // answer_key_element.text('answer key')
     
     var answer_key_object = {
