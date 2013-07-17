@@ -24,7 +24,7 @@ function AnswerKey(link_that_calls_function,quiz_id){
                                     
     var answer_key_element = $('<div>');
     answer_key_element.addClass('answer_key');
-    answer_key_element.text('answer key')
+    // answer_key_element.text('answer key')
     
     var answer_key_object = {
         //points to newly created answer key element
@@ -34,10 +34,20 @@ function AnswerKey(link_that_calls_function,quiz_id){
             id: quiz_id,
             container_element: quiz_container_element,
             answers_elements: quiz_answers_elements,
-            array_of_answers : []
+            array_of_answers : [],
             //
         }
     }
+
+    //answer_key_object.quiz.array_of_answers
+
+    _.each(answer_key_object.quiz.answers_elements,function(element){
+        var answer_text = $(element).text();
+        answer_key_object.quiz.array_of_answers.push(answer_text);
+    })
+
+    answer_key_element.text(answer_key_object.quiz.array_of_answers.toString())
+
     answer_key_element.insertAfter($(link_that_calls_function))
     answer_keys.push(answer_key_object);
     return answer_key_object
