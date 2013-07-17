@@ -3,7 +3,7 @@
     <div class="quiz">
         <p><%= link_to quiz.name, quiz %></p>
         <p class="quiz_options">
-            <%= link_to_function "add answers", "AnswerKey(this)" %>
+            <%= link_to_function "add answers", "AnswerKey(this,"+quiz.id.to_s+")" %>
         </p>
     <div class="questions offset1">
         <% quiz.questions.each do |question| %>
