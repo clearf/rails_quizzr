@@ -2,6 +2,13 @@ class QuizzesController < ApplicationController
 
     def index
         @quizzes = Quiz.all
+
+        #ways to also display JSON in addition to HTML
+        
+        respond_to do |format|
+            format.html
+            format.json {render json: @quizzes, :include => :questions}
+        end
     end
 
     def new

@@ -1,6 +1,11 @@
 //this array holds all currently instantiated AnswerKey elements
 var answer_keys = []
 
+function when_response_loads(){
+       console.log(this)
+       alert("Package Received!")
+};
+
 function remove_field(link){
     var field_container = $($(link).parent());
     var hidden_field = $($(link).prev('input[type=hidden]'));
